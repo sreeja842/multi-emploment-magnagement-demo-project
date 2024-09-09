@@ -1,0 +1,18 @@
+<h1>Your Leave Requests</h1>
+<table>
+  <tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Reason</th>
+    <th>Status</th>
+  </tr>
+  {% for leave in leave_requests %}
+  <tr>
+    <td>{{ leave.start_date }}</td>
+    <td>{{ leave.end_date }}</td>
+    <td>{{ leave.reason }}</td>
+    <td>{{ leave.approved }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'submit_leave' %}">Submit a New Leave Request</a>

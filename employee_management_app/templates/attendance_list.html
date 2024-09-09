@@ -1,0 +1,16 @@
+<h1>Your Attendance Records</h1>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Clock-in Time</th>
+    <th>Clock-out Time</th>
+  </tr>
+  {% for record in attendance_records %}
+  <tr>
+    <td>{{ record.date }}</td>
+    <td>{{ record.clock_in_time }}</td>
+    <td>{{ record.clock_out_time }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'clock_in' %}">Clock In</a>
